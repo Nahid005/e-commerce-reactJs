@@ -1,24 +1,29 @@
 import React from 'react'
+import { MdOutlineAddShoppingCart } from "react-icons/md";
+
+const productTitleShort = (str, num) => {
+    return str.slice(0, num)+"..."
+}
 
 const Product = (props) => {
-
-console.log(props.items)
 
     const {name, img, price, } = props.items
 
     return (
-        <div className='productCard bg-white border border-slate-900 p-3'>
-            <div className='productCard__img text-center mb-3'>
-                <img className='w-full' src={img} alt={name} />
+        <div className='productCard bg-white border p-3 h-full rounded hover:scale-105 hover:transition-all'>
+            <div className='productCard__img flex justify-center mb-3'>
+                <img className='w-auto text-center' src={img} alt={name} />
             </div>
-            <div className='productCard__info'>
+            <div className='productCard__info '>
                 <div className='productCard__title'>
-                    <h5> {name} </h5>
+                    <h5> {productTitleShort(name, 49)} </h5>
                 </div>
-                <div className='porductCard__price'> 
+                <div className='porductCard__price text-left mb-5 mt-3 '> 
                     <p> <strong> Price: </strong> {price} </p>
                 </div>
-                <button> add to cart </button>
+                <div className='productCard__button flex justify-center items-end'>
+                    <button className='bottom-0 text-center bg-slate-900 p-2 text-white rounded flex items-center '> <MdOutlineAddShoppingCart className='mr-2'/> add to cart </button>
+                </div>
             </div>
         </div>
     )

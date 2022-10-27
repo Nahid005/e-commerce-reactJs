@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaSistrix, FaShoppingCart,FaUser,FaRegBell } from 'react-icons/fa';
+import {Link} from 'react-router-dom'
 
 import Logo from '../../assets/images/logo.png'
 
@@ -8,7 +9,9 @@ const HeaderTop = () => {
         <div className='headerTop bg-[#334155] py-2 '>
             <div className='headerTop__container container mx-auto flex items-center justify-between flex-row w-full'>
                 <div className='headerTop__logo w-3/12'>
-                    <img className='w-28' src={Logo} alt="Amazon" />
+                    <Link to="/">
+                        <img className='w-28' src={Logo} alt="Amazon" />
+                    </Link>
                 </div>
                 <div className='headerTop__search w-6/12'>
                     <form>   
