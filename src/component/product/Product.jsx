@@ -1,5 +1,6 @@
 import React from 'react'
 import { MdOutlineAddShoppingCart } from "react-icons/md";
+import { useStateValue } from '../customState/StateProvider';
 
 const productTitleShort = (str, num) => {
     return str.slice(0, num)+"..."
@@ -8,6 +9,18 @@ const productTitleShort = (str, num) => {
 const Product = (props) => {
 
     const {name, img, price, } = props.items
+    const [state, dispatch] = useStateValue()
+
+    const adToBasket = () =>{
+        dispatch({
+            type:"ADD_TO-BASKET",
+            items: {
+                name: name,
+                img: img,
+                price:price
+            }
+        })
+    } 
 
     return (
         <div className='productCard bg-white border p-3 h-full rounded hover:scale-105 hover:transition-all'>
@@ -22,7 +35,7 @@ const Product = (props) => {
                     <p> <strong> Price: </strong> {price} </p>
                 </div>
                 <div className='productCard__button flex justify-center items-end'>
-                    <button className='bottom-0 text-center bg-slate-900 p-2 text-white rounded flex items-center '> <MdOutlineAddShoppingCart className='mr-2'/> add to cart </button>
+                    <button onClick={adToBasket} className='bottom-0 text-center bg-slate-900 p-2 text-white rounded flex items-center '> <MdOutlineAddShoppingCart className='mr-2'/> add to cart </button>
                 </div>
             </div>
         </div>
