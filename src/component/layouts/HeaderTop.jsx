@@ -3,8 +3,10 @@ import { FaSistrix, FaShoppingCart,FaUser,FaRegBell } from 'react-icons/fa';
 import {Link} from 'react-router-dom'
 
 import Logo from '../../assets/images/logo.png'
+import { useStateValue } from '../../StateProvider';
 
 const HeaderTop = () => {
+    const [{basket}, dispatch] = useStateValue()
     return (
         <div className='headerTop bg-[#334155] py-2 '>
             <div className='headerTop__container container mx-auto flex items-center justify-between flex-row w-full'>
@@ -29,7 +31,7 @@ const HeaderTop = () => {
                         <span> <FaUser /> </span>
                     </div>
                     <div className='headerTop__optionLine relative bg-orange-500 p-2 text-white rounded-sm'>
-                        <span className="absolute text-white top-0 right-0 px-1 text-xs font-semibold rounded dark:bg-gray-700 dark:text-gray-300"> 0 </span>
+                        <span className="absolute text-white top-0 right-0 px-1 text-xs font-semibold rounded dark:bg-gray-700 dark:text-gray-300"> {basket.length} </span>
                         <span> <FaShoppingCart /> </span>
                     </div>
                     <div className='headerTop__optionLine relative bg-orange-500 p-2 text-white rounded-sm'>

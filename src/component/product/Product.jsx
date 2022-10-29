@@ -1,6 +1,6 @@
 import React from 'react'
 import { MdOutlineAddShoppingCart } from "react-icons/md";
-import { useStateValue } from '../customState/StateProvider';
+import { useStateValue } from '../../StateProvider';
 
 const productTitleShort = (str, num) => {
     return str.slice(0, num)+"..."
@@ -11,10 +11,10 @@ const Product = (props) => {
     const {name, img, price, } = props.items
     const [state, dispatch] = useStateValue()
 
-    const adToBasket = () =>{
+    const adToBasket = () => {
         dispatch({
-            type:"ADD_TO-BASKET",
-            items: {
+            type:"ADD_TO_BASKET",
+            item: {
                 name: name,
                 img: img,
                 price:price
