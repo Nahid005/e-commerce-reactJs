@@ -3,17 +3,18 @@ import CurrencyFormat from 'react-currency-format'
 
 
 const ProductCartInfo = () => {
+    
     return (
         <div className='subtotal'>
             <CurrencyFormat 
                 renderText={value => <div>
-                    <p> subtotal (0 items ): <strong> {value} </strong> </p>
+                    <p> subtotal ( items ): <strong> {value} </strong> </p>
                     <small className='subtotal__gift'>
                         <input type="checkbox" name="" id="" />
                         <span> this order contain a gift </span>
                     </small>
                 </div>}
-                value={2456981} 
+                value={0} 
                 displayType={'text'}
                 decimalScale={2} 
                 thousandSeparator={true} 

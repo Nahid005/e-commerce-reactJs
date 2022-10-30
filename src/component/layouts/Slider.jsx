@@ -5,7 +5,7 @@ import sliderImage from '../../assets/images/slider.jpg'
 const Slider = () => {
     return(
         <div>
-            <img className='w-full' src={sliderImage} alt="slider images" />
+            <img className='w-full h-96' src={sliderImage} alt="slider images" />
         </div>
     )
 }

@@ -7,8 +7,9 @@ import { useStateValue } from '../../StateProvider';
 
 const HeaderTop = () => {
     const [{basket}, dispatch] = useStateValue()
+
     return (
-        <div className='headerTop bg-[#334155] py-2 '>
+        <div className='headerTop bg-[#334155] py-2 sticky w-full fixed'>
             <div className='headerTop__container container mx-auto flex items-center justify-between flex-row w-full'>
                 <div className='headerTop__logo w-3/12'>
                     <Link to="/">
@@ -31,8 +32,10 @@ const HeaderTop = () => {
                         <span> <FaUser /> </span>
                     </div>
                     <div className='headerTop__optionLine relative bg-orange-500 p-2 text-white rounded-sm'>
-                        <span className="absolute text-white top-0 right-0 px-1 text-xs font-semibold rounded dark:bg-gray-700 dark:text-gray-300"> {basket.length} </span>
-                        <span> <FaShoppingCart /> </span>
+                        <Link to='/checkout'>
+                            <span className="absolute text-white top-0 right-0 px-1 text-xs font-semibold rounded dark:bg-gray-700 dark:text-gray-300"> {basket.length} </span>
+                            <span> <FaShoppingCart /> </span>
+                        </Link>
                     </div>
                     <div className='headerTop__optionLine relative bg-orange-500 p-2 text-white rounded-sm'>
                         <span className="absolute text-white top-0 right-0 px-1 text-xs font-semibold rounded dark:bg-gray-700 dark:text-gray-300"> 0 </span>
