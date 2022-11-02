@@ -1,6 +1,7 @@
 import React from 'react'
 
 import {useStateValue} from '../../StateProvider'
+import CartItem from './CartItem'
 
 const CartItemsList = () => {
 
@@ -8,19 +9,11 @@ const CartItemsList = () => {
 
     return (
         <>
-            <div className='CheckOut_title'>
-                <h4> Cart items list </h4>
+            <div className='CheckOut__title'>
+                <h4 className='border-bottom '> Cart items list </h4>
             </div>
-            <div>
-                {basket.map((cartItems) => <div>
-                    <div> 
-                        <img src={cartItems.img} alt="" />
-                    </div>
-                    <div>
-                        <h4> { cartItems.name }</h4>
-                        <p> <strong> price: </strong> {cartItems.price}</p>
-                    </div>
-                </div>)}
+            <div className='CheckOut__CartInfo'>
+                {basket.map((cartItems) => <CartItem cartItems = {cartItems} key={cartItems.key} />)}
             </div>
         </>
     )

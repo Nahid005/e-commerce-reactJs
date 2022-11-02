@@ -6,8 +6,9 @@ const productTitleShort = (str, num) => {
     return str.slice(0, num)+"..."
 }
 
-const Product = ({name, img, price,}) => {  
+const Product = (props) => {  
 
+    const {name, img, price, key} = props.pd
     const [state, dispatch] = useStateValue()
 
     const adToBasket = () => {
@@ -17,6 +18,7 @@ const Product = ({name, img, price,}) => {
                 name: name,
                 img: img,
                 price: price,
+                key: key,
             }
         })
     } 
