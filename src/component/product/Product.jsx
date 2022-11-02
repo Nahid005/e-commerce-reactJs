@@ -6,14 +6,18 @@ const productTitleShort = (str, num) => {
     return str.slice(0, num)+"..."
 }
 
-const Product = ({name, img, price, }) => {
+const Product = ({name, img, price,}) => {  
 
     const [state, dispatch] = useStateValue()
 
     const adToBasket = () => {
         dispatch({
-            type:"ADD_TO_BASKET",
-            item: [{name:name, img:img, price:price}]
+            type: "ADD_TO_BASKET",
+            item: {
+                name: name,
+                img: img,
+                price: price,
+            }
         })
     } 
 

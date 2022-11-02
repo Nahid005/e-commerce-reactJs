@@ -2,7 +2,7 @@ import React from 'react'
 import CurrencyFormat from 'react-currency-format'
 
 
-const ProductCartInfo = () => {
+const SubtotalCart = () => {
     
     return (
         <div className='subtotal'>
@@ -24,4 +24,4 @@ const ProductCartInfo = () => {
     )
 }
 
-export default ProductCartInfo
+export default SubtotalCart

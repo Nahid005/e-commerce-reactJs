@@ -5,7 +5,9 @@ import {Link} from 'react-router-dom'
 import Logo from '../../assets/images/logo.png'
 import { useStateValue } from '../../StateProvider';
 
+
 const HeaderTop = () => {
+
     const [{basket}, dispatch] = useStateValue()
 
     return (
