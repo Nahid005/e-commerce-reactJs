@@ -30,9 +30,11 @@ const HeaderTop = () => {
                     </form>
                 </div>
                 <div className='headerTop__option w-3/12 flex items-center justify-end gap-2'>
-                    <div className='headerTop__optionLine bg-orange-500 p-2 text-white rounded-sm'>
-                        <span> <FaUser /> </span>
-                    </div>
+                    <Link to='/authentication'>
+                        <div className='headerTop__optionLine bg-orange-500 p-2 text-white rounded-sm'>
+                            <span> <FaUser /> </span>
+                        </div>
+                    </Link>
                     <div className='headerTop__optionLine relative bg-orange-500 p-2 text-white rounded-sm'>
                         <Link to='/checkout'>
                             <span className="absolute text-white top-0 right-0 px-1 text-xs font-semibold rounded dark:bg-gray-700 dark:text-gray-300"> {basket.length} </span>
